@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 2bb1186a463eb8b4381591a757ad04f4
+  productGUID: f61efa0e25d146042a6c166813801241
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -646,8 +646,8 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: b4d4f003-0cea-42cf-bed8-c7c158ac8e39
-  projectName: UNO-Game
+  cloudProjectId: 4ec20ed3-4aa8-4f9c-90d3-67d24249069d
+  projectName: UNO-Game (1)
   organizationId: truberton
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
