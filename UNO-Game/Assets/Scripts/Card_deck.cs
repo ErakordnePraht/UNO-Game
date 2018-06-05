@@ -79,14 +79,18 @@ public class Card_deck : MonoBehaviour {
     public Sprite special_plusFour;
     #endregion
 }
-
+/// <summary>
+/// public Card class, used to set values, such as a number and the color, to specific cards.
+/// </summary>
 public class Card
 {
     public Sprite Sprite { get; set; }
     public string Number { get; set; }
     public string Color { get; set;}
 }
-
+/// <summary>
+/// Inherits from the Card class, adds a "SpecialFunction" string, used to identify if a card can do anything special.
+/// </summary>
 public class SpecialCard : Card
 {
     public string SpecialFunction { get; set; }
