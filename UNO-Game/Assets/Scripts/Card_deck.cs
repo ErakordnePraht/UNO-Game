@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Card_deck : MonoBehaviour {
 
@@ -16,6 +17,23 @@ public class Card_deck : MonoBehaviour {
         //    }
         //}
         //MainCard.GetComponent<SpriteRenderer>().sprite = Deck[card];
+    }
+
+    private void Update()
+    {
+        Debug.Log(Input.mousePosition.x + "sadasdasfasf");
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    if ((Input.mousePosition.y > -16 || Input.mousePosition.y < 186 ) && (Input.mousePosition.x > -409 || Input.mousePosition.x < -534 ))
+        //    {
+        //        Debug.Log("goisdhgtz<sigrbvugrbvtfeuitvklu");
+        //    }
+        //}
+    }
+
+    private void OnMouseDown(PointerEventData eventData)
+    {
+        Debug.Log(Input.mousePosition + "sadasdasfasf");
     }
     #region Long list of sprites
     public Sprite num_0_Y;
