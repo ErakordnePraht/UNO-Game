@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -37,12 +37,12 @@ public class Card_deck : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
 
     public void OnDrag(PointerEventData eventData)
     {
-        Copy.transform.position = eventData.position;
+        Copy.transform.position = eventData.position; //Keeps card under mouse
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Copy.transform.SetParent(Hand.transform);
+        Copy.transform.SetParent(Hand.transform); //Sends card to hand
     }
 
 
@@ -117,14 +117,18 @@ public class Card_deck : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     public Sprite special_plusFour;
     #endregion
 }
-
+/// <summary>
+/// public Card class, used to set values, such as a number and the color, to specific cards.
+/// </summary>
 public class Card
 {
     public Sprite Sprite { get; set; }
     public string Number { get; set; }
     public string Color { get; set; }
 }
-
+/// <summary>
+/// Inherits from the Card class, adds a "SpecialFunction" string, used to identify if a card can do anything special.
+/// </summary>
 public class SpecialCard : Card
 {
     public string SpecialFunction { get; set; }
