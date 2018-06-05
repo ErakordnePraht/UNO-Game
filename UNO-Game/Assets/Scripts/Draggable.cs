@@ -4,18 +4,25 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Draggable : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Transform parentToReturnTo = null;
     public Transform placeholderParent = null;
+    public Vector3 HandPosition { get; set; }
 
     GameObject placeholder = null;
 
-    public enum Slot { TableCard, HandCard};
+    public enum Slot { TableCard, HandCard };
     public Slot typeOfItem = Slot.TableCard;
+
+    public string HandColor { get; private set; }
+    public GameObject MainCard { get; private set; }
+    public string StackColor = "Blue";
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        HandPosition = Input.mousePosition;
+        MainCard = eventData.pointerDrag;
         placeholder = new GameObject();
         placeholder.transform.SetParent(transform.parent);
         LayoutElement layoutElement = placeholder.AddComponent<LayoutElement>();
@@ -31,6 +38,7 @@ public class Draggable : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDrag
         transform.SetParent(transform.parent.parent);
 
         GetComponent<CanvasGroup>().blocksRaycasts = false;
+
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -68,5 +76,24 @@ public class Draggable : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDrag
         GetComponent<CanvasGroup>().blocksRaycasts = true;
 
         Destroy(placeholder);
+
+        Card_deck c = new Card_deck();
+        Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
+        /*TODO
+        Add color, specialfunction, first card allowed always*/
+        if (MainCard != null)
+        {
+            if (typeOfItem == d.typeOfItem)
+            {
+                //d.parentToReturnTo = transform;
+            }
+            HandColor = MainCard.GetComponent<CardValues>().Color;
+            Debug.Log(HandColor.ToString());
+            if (HandColor != StackColor)
+            {
+                MainCard.transform.position = HandPosition;
+                Debug.Log("rgftrjyusjs");
+            }
+        }
     }
 }
