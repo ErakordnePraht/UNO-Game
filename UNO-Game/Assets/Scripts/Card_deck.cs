@@ -24,9 +24,9 @@ public class Card_deck : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        CardsPlayed++;
         if (CardsPlayed < 108)
         {
-            CardsPlayed++;
             Copy = Instantiate(MainCard);
             Copy.transform.SetParent(canvas.transform);
             Copy.GetComponent<Image>().sprite = Deck[CardsPlayed].Sprite;
@@ -37,12 +37,18 @@ public class Card_deck : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
 
     public void OnDrag(PointerEventData eventData)
     {
-        Copy.transform.position = eventData.position; //Keeps card under mouse
+        if (CardsPlayed < 108)
+        {
+            Copy.transform.position = eventData.position; //Keeps card under mouse 
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Copy.transform.SetParent(Hand.transform); //Sends card to hand
+        if (CardsPlayed < 108)
+        {
+            Copy.transform.SetParent(Hand.transform); //Sends card to hand 
+        }
     }
 
 
