@@ -13,7 +13,11 @@ public class Draggable : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDrag
 
     public enum Slot { TableCard, HandCard};
     public Slot typeOfItem = Slot.TableCard;
-
+    /// <summary>
+    /// When you start dragging it makes a new "placeholder card" which is then used for animation purposes.
+    /// Sets the parent which the object was taken from and moves it from one place to another.
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnBeginDrag(PointerEventData eventData)
     {
         placeholder = new GameObject();
@@ -32,7 +36,10 @@ public class Draggable : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDrag
 
         GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
-
+    /// <summary>
+    /// Does the animation while moving the card.
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = eventData.position;
@@ -60,7 +67,10 @@ public class Draggable : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDrag
         }
         placeholder.transform.SetSiblingIndex(NewSiblingIndex);
     }
-
+    /// <summary>
+    /// Sets the parent after ending the drag and destroys the "placeholder card" after it's no longer needed.ss
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.SetParent(parentToReturnTo);
