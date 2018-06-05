@@ -5,7 +5,11 @@ using UnityEngine.EventSystems;
 
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public string HandColor;
+    public string StackColor;
     public Draggable.Slot typeOfItem = Draggable.Slot.TableCard;
+    public GameObject MainCard;
+
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log(eventData.pointerDrag.name + " Was dropped on " + gameObject.name);
@@ -17,12 +21,25 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             {
                 d.parentToReturnTo = transform;
             }
-            if (c.HandColor != c.StackColor)
+            HandColor = MainCard.GetComponent<CardValues>().Color;
+            if (HandColor != StackColor)
             {
                 d.parentToReturnTo = transform;
             }
         }
     }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        MainCard = eventData.pointerDrag;
+        Debug.Log(MainCard + "asdasasdasd");
+    }
+
+    //public void OnPointerDown(PointerEventData eventData)
+    //{
+    //    Debug.Log("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+    //    MainCard = eventData.pointerCurrentRaycast.gameObject;
+    //}
 
     public void OnPointerEnter(PointerEventData eventData)
     {

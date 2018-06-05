@@ -511,7 +511,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aae2f33f426764b88347b30cf24cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HandColor: 
+  StackColor: 
   typeOfItem: 1
+  MainCard: {fileID: 0}
 --- !u!1 &668951922
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +876,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e714f351c82f1a4eabcfb4ae2df2712, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1255301182 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1382322294779276, guid: 8e714f351c82f1a4eabcfb4ae2df2712,
+    type: 2}
+  m_PrefabInternal: {fileID: 822309600}
+--- !u!114 &1255301188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1255301182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72750f08e3257a043b2d65f27f17e44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HandColor: 
+  StackColor: 
+  typeOfItem: 0
+  MainCard: {fileID: 0}
 --- !u!1001 &1307930613
 Prefab:
   m_ObjectHideFlags: 0
@@ -1143,6 +1166,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114715031244661798, guid: 0eda85c106cd2f44fb265a1b43c63c3f,
+        type: 2}
+      propertyPath: Color
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0eda85c106cd2f44fb265a1b43c63c3f, type: 2}
   m_IsPrefabParent: 0
@@ -1227,7 +1255,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02aae2f33f426764b88347b30cf24cf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HandColor: 
+  StackColor: 
   typeOfItem: 0
+  MainCard: {fileID: 0}
 --- !u!114 &1807262603
 MonoBehaviour:
   m_ObjectHideFlags: 0
