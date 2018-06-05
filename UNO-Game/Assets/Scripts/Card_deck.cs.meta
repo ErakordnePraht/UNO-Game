@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - MainCard: {fileID: 1220894185001720, guid: 0eda85c106cd2f44fb265a1b43c63c3f, type: 2}
+  - MainCard: {fileID: 1032092938589712, guid: a755405c5ddbc2d458bb14179eef7228, type: 2}
   - num_0_Y: {fileID: 21300000, guid: a1c5873fff53993489b3c5e86494e464, type: 3}
   - num_1_Y: {fileID: 21300000, guid: a09adcf811ef5354da6961c1ab829a14, type: 3}
   - num_2_Y: {fileID: 21300000, guid: 264f6378372a3b44a93060a78b145026, type: 3}
