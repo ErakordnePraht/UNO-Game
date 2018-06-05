@@ -9,15 +9,10 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log(eventData.pointerDrag.name + " Was dropped on " + gameObject.name);
-        Card_deck c = new Card_deck();
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (d != null)
         {
             if (typeOfItem == d.typeOfItem)
-            {
-                d.parentToReturnTo = transform;
-            }
-            if (c.HandColor != c.StackColor)
             {
                 d.parentToReturnTo = transform;
             }
