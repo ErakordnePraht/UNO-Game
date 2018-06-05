@@ -223,6 +223,25 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e714f351c82f1a4eabcfb4ae2df2712, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &294472726 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1382322294779276, guid: 8e714f351c82f1a4eabcfb4ae2df2712,
+    type: 2}
+  m_PrefabInternal: {fileID: 1159508415}
+--- !u!114 &294472732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294472726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e7a0ee68cbe98438afe1a733d68c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: Red
+  Number: 2
+  SpecialFunction: 
 --- !u!1 &383091208
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +915,20 @@ MonoBehaviour:
   StackColor: 
   typeOfItem: 0
   MainCard: {fileID: 0}
+--- !u!114 &1255301189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1255301182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e7a0ee68cbe98438afe1a733d68c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: Blue
+  Number: 0
+  SpecialFunction: 
 --- !u!1001 &1307930613
 Prefab:
   m_ObjectHideFlags: 0
@@ -1020,6 +1053,7 @@ GameObject:
   - component: {fileID: 1697403785}
   - component: {fileID: 1697403784}
   - component: {fileID: 1697403788}
+  - component: {fileID: 1697403789}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -1081,6 +1115,7 @@ MonoBehaviour:
   parentToReturnTo: {fileID: 0}
   placeholderParent: {fileID: 0}
   typeOfItem: 0
+  StackColor: Blue
 --- !u!114 &1697403786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,6 +1162,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1697403789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1697403782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e7a0ee68cbe98438afe1a733d68c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: Green
+  Number: 0
+  SpecialFunction: 
 --- !u!1001 &1730240438
 Prefab:
   m_ObjectHideFlags: 0
