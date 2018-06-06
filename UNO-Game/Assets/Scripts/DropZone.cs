@@ -6,7 +6,10 @@ using UnityEngine.EventSystems;
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Draggable.Slot typeOfItem = Draggable.Slot.TableCard;
-
+    /// <summary>
+    /// Sets where the card goes when you drop it somewhere on the playtable.
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log(eventData.pointerDrag.name + " Was dropped on " + gameObject.name);
@@ -19,12 +22,10 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             }
         }
     }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        
-    }
-
+    /// <summary>
+    /// Moves the "placeholder card" to the canvas where your mouse is currently at, so that the animation works.
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (eventData.pointerDrag == null)
@@ -38,7 +39,10 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             d.placeholderParent = transform;
         }
     }
-
+    /// <summary>
+    /// Checks if the "placeholder card" was moved to a canvas and if not then it leaves the "placeholder card" on the last canvas and does the animation there.
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnPointerExit(PointerEventData eventData)
     {
         if (eventData.pointerDrag == null)
