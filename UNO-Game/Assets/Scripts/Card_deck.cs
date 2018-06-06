@@ -129,6 +129,19 @@ new Card() { Sprite = special_plusFour, Color = "Black", SpecialFunction = "Plus
         #endregion
 
         Deck.Shuffle();
+
+        //Deals cards to player
+        for (int i = 0; i < 7; i++)
+        {
+            CardsPlayed++;
+            Copy = Instantiate(MainCard);
+            Copy.transform.SetParent(canvas.transform);
+            Copy.GetComponent<Image>().sprite = Deck[CardsPlayed].Sprite;
+            Copy.GetComponent<CardValues>().Color = Deck[CardsPlayed].Color;
+            Copy.GetComponent<CardValues>().Number = Deck[CardsPlayed].Number;
+            Copy.GetComponent<CardValues>().SpecialFunction = Deck[CardsPlayed].SpecialFunction;
+            Copy.transform.SetParent(Hand.transform);
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
