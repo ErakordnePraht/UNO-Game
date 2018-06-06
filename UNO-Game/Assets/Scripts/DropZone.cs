@@ -25,6 +25,10 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
                 if (legal.Check(Draggable.MainCard))
                 {
                     Debug.Log("true");
+                    foreach (Transform child in gameObject.transform)
+                    {
+                        Destroy(child.gameObject);
+                    }
                     return;
                 }
                 else
