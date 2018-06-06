@@ -21,6 +21,18 @@ public class Card_deck : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         #endregion
 
         Deck.Shuffle();
+
+        //Deals cards to player
+        for (int i = 0; i < 7; i++)
+        {
+            CardsPlayed++;
+            Copy = Instantiate(MainCard);
+            Copy.transform.SetParent(canvas.transform);
+            Copy.GetComponent<Image>().sprite = Deck[CardsPlayed].Sprite;
+            Copy.GetComponent<CardValues>().Color = Deck[CardsPlayed].Color;
+            Copy.GetComponent<CardValues>().Number = Deck[CardsPlayed].Number;
+            Copy.transform.SetParent(Hand.transform);
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
