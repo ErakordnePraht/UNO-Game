@@ -8,6 +8,6 @@
 
 ### Second day
 
-- it's possible to draw from card deck now
+- It's now possible to draw from card deck
 - Animations
 - Started on legal/illegal moves
