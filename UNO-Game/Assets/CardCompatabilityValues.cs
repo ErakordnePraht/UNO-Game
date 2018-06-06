@@ -57,10 +57,6 @@ class CardCompatabilityValues : MonoBehaviour
                 return false;
             }
         }
-        else
-        {
-            return false;
-        }
     }
 }
 

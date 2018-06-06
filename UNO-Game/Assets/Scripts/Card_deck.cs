@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using System;
 using System.Threading;
 
+/// <summary>
+/// The class that contains almost all the info about the card deck, and a card.
+/// </summary>
 public class Card_deck : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField] private GameObject MainCard;

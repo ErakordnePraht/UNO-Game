@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Mostly used for the animation of dragging a card over your hand.
+/// </summary>
+/// <remarks>
+/// Has a "placeholder" card, that is invisible, that goes in-between the cards in your hand while the user is dragging a card around.
+/// The placeholder card gets deleted after the user lets go of the mouse.
+/// </remarks>
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Transform parentToReturnTo = null;
