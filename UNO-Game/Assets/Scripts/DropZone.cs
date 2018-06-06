@@ -10,6 +10,7 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     /// Sets where the card goes when you drop it somewhere on the playtable.
     /// </summary>
     /// <param name="eventData"></param>
+    public GameObject Hand;
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log(eventData.pointerDrag.name + " Was dropped on " + gameObject.name);
@@ -19,6 +20,19 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             if (typeOfItem == d.typeOfItem)
             {
                 d.parentToReturnTo = transform;
+                Debug.Log("Ayyyy");
+                CardCompatabilityValues legal = new CardCompatabilityValues();
+                if (legal.Check(Draggable.MainCard))
+                {
+                    Debug.Log("true");
+                    return;
+                }
+                else
+                {
+                    Debug.Log("false");
+
+                    Draggable.MainCard.transform.position = Hand.transform.position;
+                }
             }
         }
     }

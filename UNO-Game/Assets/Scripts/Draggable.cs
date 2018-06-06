@@ -4,27 +4,28 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Draggable : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Transform parentToReturnTo = null;
     public Transform placeholderParent = null;
-    public GameObject MainCard;
-    public string HandColor;
-    public string StackColor;
-    public GameObject Table;
-    public Vector3 HandPosition { get; set; }
     GameObject placeholder = null;
+    public static GameObject MainCard;
 
-    public enum Slot { TableCard, HandCard};
+    public enum Slot { TableCard, HandCard };
     public Slot typeOfItem = Slot.TableCard;
     /// <summary>
     /// When you start dragging it makes a new "placeholder card" which is then used for animation purposes.
     /// Sets the parent which the object was taken from and moves it from one place to another.
     /// </summary>
     /// <param name="eventData"></param>
+    /// 
+    private void Start()
+    {
+        //Table = GameObject.FindGameObjectWithTag("Table");
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        HandPosition = Input.mousePosition;
+        //HandPosition = Input.mousePosition;
         MainCard = eventData.pointerDrag;
         placeholder = new GameObject();
         placeholder.transform.SetParent(transform.parent);
@@ -87,24 +88,5 @@ public class Draggable : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDrag
 
         Card_deck c = new Card_deck();
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
-        /*TODO
-        Add color, specialfunction, first card allowed always*/
-        if (MainCard != null)
-        {
-            if (typeOfItem == d.typeOfItem)
-            {
-                //d.parentToReturnTo = transform;
-            }
-            HandColor = MainCard.GetComponent<CardValues>().Color;
-            Debug.Log(HandColor.ToString());
-            if (HandColor != StackColor)
-            {
-                MainCard.transform.position = HandPosition;
-            }
-            if (MainCard.transform.parent == Table.transform)
-            {
-                StackColor = HandColor;
-            }
-        }
     }
 }
