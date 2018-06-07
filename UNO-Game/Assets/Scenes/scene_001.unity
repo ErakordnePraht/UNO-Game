@@ -1205,14 +1205,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 526309178}
   button: {fileID: 943604683}
-  m_GameObject: {fileID: 668951922}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.549988, y: -2.880005, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &959435635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,10 +1463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCard: {fileID: 1032092938589712, guid: a755405c5ddbc2d458bb14179eef7228, type: 2}
-  Copy: {fileID: 0}
   canvas: {fileID: 384570593}
   Hand: {fileID: 665917218}
-  CardsPlayed: -1
   num_0_Y: {fileID: 21300000, guid: a1c5873fff53993489b3c5e86494e464, type: 3}
   num_1_Y: {fileID: 21300000, guid: a09adcf811ef5354da6961c1ab829a14, type: 3}
   num_2_Y: {fileID: 21300000, guid: 264f6378372a3b44a93060a78b145026, type: 3}

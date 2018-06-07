@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
@@ -11,9 +9,12 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     /// </summary>
     /// <param name="eventData"></param>
     public GameObject Hand;
+    /// <summary>
+    /// When a draggable object is dropped it checks whether it's allowed
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnDrop(PointerEventData eventData)
     {
-        //Debug.Log(eventData.pointerDrag.name + " Was dropped on " + gameObject.name);
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (d != null)
         {

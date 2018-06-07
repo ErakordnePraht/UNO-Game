@@ -11,11 +11,11 @@ using System.Threading;
 public class Card_deck : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField] private GameObject MainCard;
-    public List<Card> Deck;
-    public GameObject Copy;
+    private List<Card> Deck;
+    private GameObject Copy;
     public Canvas canvas;
     public GameObject Hand;
-    public int CardsPlayed = -1;
+    private int CardsPlayed = -1;
 
     void Start()
     {
@@ -133,48 +133,72 @@ new Card() { Sprite = special_plusFour, Color = "Black", SpecialFunction = "Plus
 
         Deck.Shuffle();
 
-        //Deals cards to player
+        //Deals cards to player at the start of the game
         for (int i = 0; i < 7; i++)
         {
             CardsPlayed++;
-            Copy = Instantiate(MainCard);
-            Copy.transform.SetParent(canvas.transform);
-            Copy.GetComponent<Image>().sprite = Deck[CardsPlayed].Sprite;
-            Copy.GetComponent<CardValues>().Color = Deck[CardsPlayed].Color;
-            Copy.GetComponent<CardValues>().Number = Deck[CardsPlayed].Number;
-            Copy.GetComponent<CardValues>().SpecialFunction = Deck[CardsPlayed].SpecialFunction;
+            Copy = CreateCard(Copy, CardsPlayed);
+            //Copy = Instantiate(MainCard);
+            //Copy.transform.SetParent(canvas.transform);
+            //Copy.GetComponent<Image>().sprite = Deck[CardsPlayed].Sprite;
+            //Copy.GetComponent<CardValues>().Color = Deck[CardsPlayed].Color;
+            //Copy.GetComponent<CardValues>().Number = Deck[CardsPlayed].Number;
+            //Copy.GetComponent<CardValues>().SpecialFunction = Deck[CardsPlayed].SpecialFunction;
             Copy.transform.SetParent(Hand.transform);
         }
     }
 
+    /// <summary>
+    ///Creates a card when you start dragging from deck
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnBeginDrag(PointerEventData eventData)
     {
         CardsPlayed++;
         if (CardsPlayed < 108)
         {
-            Copy = Instantiate(MainCard);
-            Copy.transform.SetParent(canvas.transform);
-            Copy.GetComponent<Image>().sprite = Deck[CardsPlayed].Sprite;
-            Copy.GetComponent<CardValues>().Color = Deck[CardsPlayed].Color;
-            Copy.GetComponent<CardValues>().Number = Deck[CardsPlayed].Number;
-            Copy.GetComponent<CardValues>().SpecialFunction = Deck[CardsPlayed].SpecialFunction;
+            Copy = CreateCard(Copy, CardsPlayed);
+            //Copy = Instantiate(MainCard);
+            //Copy.transform.SetParent(canvas.transform);
+            //Copy.GetComponent<Image>().sprite = Deck[CardsPlayed].Sprite;
+            //Copy.GetComponent<CardValues>().Color = Deck[CardsPlayed].Color;
+            //Copy.GetComponent<CardValues>().Number = Deck[CardsPlayed].Number;
+            //Copy.GetComponent<CardValues>().SpecialFunction = Deck[CardsPlayed].SpecialFunction;
         }
     }
 
+    /// <summary>
+    /// Keeps card under your mouse while dragging
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnDrag(PointerEventData eventData)
     {
         if (CardsPlayed < 108)
         {
-            Copy.transform.position = eventData.position; //Keeps card under mouse 
+            Copy.transform.position = eventData.position;
         }
     }
-
+    /// <summary>
+    /// Sends card to hand when you stop dragging
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnEndDrag(PointerEventData eventData)
     {
         if (CardsPlayed < 108)
         {
-            Copy.transform.SetParent(Hand.transform); //Sends card to hand 
+            Copy.transform.SetParent(Hand.transform);
         }
+    }
+
+    public GameObject CreateCard(GameObject Copy, int index)
+    {
+        Copy = Instantiate(MainCard);
+        Copy.transform.SetParent(canvas.transform);
+        Copy.GetComponent<Image>().sprite = Deck[index].Sprite;
+        Copy.GetComponent<CardValues>().Color = Deck[index].Color;
+        Copy.GetComponent<CardValues>().Number = Deck[index].Number;
+        Copy.GetComponent<CardValues>().SpecialFunction = Deck[index].SpecialFunction;
+        return Copy;
     }
 
     #region Long list of sprites
@@ -233,6 +257,7 @@ new Card() { Sprite = special_plusFour, Color = "Black", SpecialFunction = "Plus
     public Sprite special_chooseColour;
     public Sprite special_plusFour;
     #endregion
+
 }
 /// <summary>
 /// public Card class, used to set values, such as a number and the color, to specific cards.
@@ -244,10 +269,7 @@ public class Card
     public string Color { get; set; }
     public string SpecialFunction { get; set; }
 }
-/// <summary>
-/// Inherits from the Card class, adds a "SpecialFunction" string, used to identify if a card can do anything special.
-/// </summary>
-
+#region ShuffleFunction
 static class MyExtensions
 {
     /// <summary>
@@ -269,6 +291,9 @@ static class MyExtensions
     }
 }
 
+/// <summary>
+/// Used to make a more random number than usually available
+/// </summary>
 public static class ThreadSafeRandom
 {
     [ThreadStatic] private static System.Random Local;
@@ -278,5 +303,6 @@ public static class ThreadSafeRandom
         get { return Local ?? (Local = new System.Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId))); }
     }
 }
+#endregion
 
 

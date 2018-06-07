@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Collections;
-using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 /// <summary>
 /// A class that contains all the necessary values to check for legal moves.
@@ -14,32 +7,33 @@ class CardCompatabilityValues : MonoBehaviour
 {
     public static string StackColor;
     public static string StackNumber;
-    public static int FistTime = -1;
+    public static string StackFunction;
+
+    public static int FirstTime = -1;
     public Draggable.Slot typeOfItem = Draggable.Slot.TableCard;
     /// <summary>
     /// Checks if played move is legal or not.
     /// </summary>
     /// <param name="MainCard"></param>
     /// <param name="eventData"></param>
-    public bool Check(GameObject MainCard/*, PointerEventData eventData*/)
+    public bool Check(GameObject MainCard)
     {
-        FistTime += 1;
+        FirstTime += 1;
         string HandColor = MainCard.GetComponent<CardValues>().Color;
         string HandNumber = MainCard.GetComponent<CardValues>().Number;
         string SpecialFunction = MainCard.GetComponent<CardValues>().SpecialFunction;
-        if (SpecialFunction == "PlusFour" || SpecialFunction == "ChooseColour" || FistTime == 0)
+        if (SpecialFunction == "PlusFour" || SpecialFunction == "ChooseColour" || FirstTime == 0)
         {
-            Debug.Log("Special card inserted");
             StackColor = "Black";
         }
         if (true)
         {
-            if ((SpecialFunction != null && StackColor == HandColor) || ((StackColor == HandColor || StackNumber == HandNumber) && SpecialFunction == null) || StackColor == "Black")
+            if (((StackColor == HandColor || (StackNumber == HandNumber && SpecialFunction == null) || (SpecialFunction == StackFunction && SpecialFunction != null)) && (SpecialFunction != "PlusFour" && SpecialFunction != "ChooseColour")) || //If card is compatible with last card it is allowed
+               StackColor == "Black") //If stack color is black all cards are allowed
             {
-                Debug.Log(StackColor);
-                Debug.Log("legal");
                 StackColor = HandColor;
                 StackNumber = HandNumber;
+                StackFunction = SpecialFunction;
                 return true;
             }
             else
@@ -52,8 +46,6 @@ class CardCompatabilityValues : MonoBehaviour
                         d.parentToReturnTo = GameObject.Find("Hand").transform;
                     }
                 }
-                //MainCard.transform.SetParent();
-                Debug.Log("illegal");
                 return false;
             }
         }

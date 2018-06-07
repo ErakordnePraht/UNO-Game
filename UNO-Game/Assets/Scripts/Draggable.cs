@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -26,13 +24,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     /// </summary>
     /// <param name="eventData"></param>
     /// 
-    private void Start()
-    {
-        //Table = GameObject.FindGameObjectWithTag("Table");
-    }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        //HandPosition = Input.mousePosition;
         MainCard = eventData.pointerDrag;
         placeholder = new GameObject();
         placeholder.transform.SetParent(transform.parent);
