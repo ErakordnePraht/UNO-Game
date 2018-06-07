@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Shows the user the pause menu.
+/// </summary>
 public class Pause_unpause : MonoBehaviour {
 
     public Transform canvas;
