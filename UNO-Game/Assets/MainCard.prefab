@@ -20,9 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4437421372678180}
   - component: {fileID: 212026896777563642}
-  - component: {fileID: 114204201970375558}
-  - component: {fileID: 114150649367853104}
-  - component: {fileID: 114496213257296728}
+  - component: {fileID: 114715031244661798}
   m_Layer: 0
   m_Name: MainCard
   m_TagString: Untagged
@@ -43,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114150649367853104
+--- !u!114 &114715031244661798
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -51,63 +49,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1220894185001720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5da95a79c30c454b8ecf0aa77911c8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 81e7a0ee68cbe98438afe1a733d68c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TableCardSync: {fileID: 0}
---- !u!114 &114204201970375558
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1220894185001720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 14
-    i1: 218
-    i2: 133
-    i3: 193
-    i4: 6
-    i5: 205
-    i6: 47
-    i7: 68
-    i8: 251
-    i9: 38
-    i10: 90
-    i11: 27
-    i12: 67
-    i13: 198
-    i14: 60
-    i15: 63
-  m_ServerOnly: 1
-  m_LocalPlayerAuthority: 0
---- !u!114 &114496213257296728
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1220894185001720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
+  Color: 
+  Number: 
+  SpecialFunction: 
 --- !u!212 &212026896777563642
 SpriteRenderer:
   m_ObjectHideFlags: 1
