@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit to title screen
+  m_Text: Restart game
 --- !u!222 &238891416
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1676,6 +1676,7 @@ GameObject:
   - component: {fileID: 1731448947}
   - component: {fileID: 1731448946}
   - component: {fileID: 1731448945}
+  - component: {fileID: 1731448948}
   m_Layer: 5
   m_Name: Exit to title screen
   m_TagString: Untagged
@@ -1776,6 +1777,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1731448943}
+--- !u!114 &1731448948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1731448943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e54eca4715a3e47bcf04c21db3b71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1731448945}
 --- !u!1 &1807262598
 GameObject:
   m_ObjectHideFlags: 0
