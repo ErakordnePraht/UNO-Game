@@ -23,7 +23,7 @@
 
 ### Fourth day
 
-- Wasted A LOT of time trying to get multiplayer to work (still doesn't work by the way)
+- Wasted _**A LOT**_ of time trying to get multiplayer to work (still doesn't work by the way)
 - Screen scales correctly now
 - You can now restart game
 - Same SpecialFunction cards are now stackable
