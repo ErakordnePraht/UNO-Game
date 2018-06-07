@@ -2036,7 +2036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfItem: 0
-  Hand: {fileID: 0}
+  Hand: {fileID: 564424932}
 --- !u!114 &1807262603
 MonoBehaviour:
   m_ObjectHideFlags: 0
