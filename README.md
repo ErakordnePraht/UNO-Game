@@ -19,3 +19,4 @@
 - Added pause menu
 - Fixed card stack problem
 - At the start of the game, players get dealt cards
+- Cleaned spaghetti
