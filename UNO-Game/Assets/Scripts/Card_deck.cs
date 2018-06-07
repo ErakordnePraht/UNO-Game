@@ -146,6 +146,19 @@ new Card() { Sprite = special_plusFour, Color = "Black", SpecialFunction = "Plus
             Copy.transform.SetParent(Hand.transform);
         }
     }
+    private void Update()
+    {
+        if (ValueHolder.TableCard != null)
+        {
+            Copy = Instantiate(ValueHolder.TableCard);
+            Copy.transform.SetParent(canvas.transform);
+            Copy.GetComponent<Image>().sprite = ValueHolder.TableCard.GetComponent<Image>().sprite;
+            Copy.GetComponent<CardValues>().Color = ValueHolder.TableCard.GetComponent<CardValues>().Color;
+            Copy.GetComponent<CardValues>().Number = ValueHolder.TableCard.GetComponent<CardValues>().Number;
+            Copy.GetComponent<CardValues>().SpecialFunction = ValueHolder.TableCard.GetComponent<CardValues>().SpecialFunction;
+            ValueHolder.TableCard = null;
+        }
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {

@@ -20,21 +20,18 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
             if (typeOfItem == d.typeOfItem)
             {
                 d.parentToReturnTo = transform;
-                Debug.Log("Ayyyy");
                 CardCompatabilityValues legal = new CardCompatabilityValues();
                 if (legal.Check(Draggable.MainCard))
                 {
-                    Debug.Log("true");
                     foreach (Transform child in gameObject.transform)
                     {
                         Destroy(child.gameObject);
                     }
+                    ValueHolder.TableCard = Draggable.MainCard;
                     return;
                 }
                 else
                 {
-                    Debug.Log("false");
-
                     Draggable.MainCard.transform.position = Hand.transform.position;
                 }
             }
