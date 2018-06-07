@@ -20,3 +20,12 @@
 - Fixed card stack problem
 - At the start of the game, players get dealt cards
 - Cleaned spaghetti
+
+### Fourth day
+
+- Wasted A LOT of time trying to get multiplayer to work
+- Screen scales correctly now
+- You can now restart screen
+- Same SpecialFunction cards are now stackable
+- Removed unnecessary code
+- Improved code readability (more OOP and comments)
