@@ -2,8 +2,8 @@
 
 ### Authors: Simo Tõnu Prees, Gert-Andry Kääramees, Roberts Pauls Tohver.
 
-### To start the game you need to download the .zip file from releases, extract it and run the "UNO.exe" file.
-### Game notes: Pressing "Restart game" in the pause menu (pressing ESC in-game) takes a long time (~ 15 sec).
+### To start the game you need to download the .zip file from the releases tab, extract it and run the "UNO.exe" file.
+### Game notes: Pressing "Restart game" in the pause menu (pressing ESC in-game) takes a long time (~ 15 sec). 
 
 ### First day
 
