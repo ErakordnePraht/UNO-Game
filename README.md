@@ -1,5 +1,9 @@
 # UNO-Game
 
+### Authors: Simo Tõnu Prees, Gert-Andry Kääramees, Roberts Pauls Tohver.
+
+### Game notes: Pressing "Restart game" in the pause menu (pressing ESC in-game) takes a long time (~ 15 sec.)
+
 ### First day
 
 - Basic drag & drop
