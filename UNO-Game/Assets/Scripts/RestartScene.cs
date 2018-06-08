@@ -11,6 +11,7 @@ public class RestartScene : MonoBehaviour {
     }
     void OnClick()
     {
+        CardCompatabilityValues.StackColor = "Black";
         Scene loadedLevel = SceneManager.GetActiveScene();
         SceneManager.LoadScene(loadedLevel.buildIndex);
     }
